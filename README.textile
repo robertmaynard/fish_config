@@ -1,0 +1,17 @@
+h1. Fish Config
+
+Based on Fish nuggets from https://github.com/nirvdrum/fish_config, I have stripped it down to just the git
+component.
+
+h2. Git features
+
+* Provides completion for git commands (eg. git ch<tab> completes for you)
+* Provides completion of branch names for git branch
+
+h2.  Installation
+
+  cd ~/.config/fish
+  git init 
+  git add .
+  git remote add github git://github.com/robertmaynard/fish_config.git
+  git pull github master
