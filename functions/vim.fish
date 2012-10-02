@@ -1,3 +1,3 @@
 function vim
-	/Users/robert/.bin/mvim -c $argv
+	/Users/robert/.bin/mvim $argv
 end
