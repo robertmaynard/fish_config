@@ -1,5 +1,5 @@
 function cmake-gui-clang
-	set CC /usr/bin/clang
-	set CXX /usr/bin/clag++
+	set -lx CC /usr/bin/clang
+	set -lx CXX /usr/bin/clang++
 	cmake-gui $argv
 end
