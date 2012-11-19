@@ -1,6 +1,6 @@
 if status --is-login
 	set PATH /usr/local/bin /bin /usr/sbin /sbin /usr/bin /usr/X11R6/bin /usr/local/cuda/bin
-	set -xU EDITOR nano
+	set -xU EDITOR 'subl -w'
 end
 
 function parse_git_branch
