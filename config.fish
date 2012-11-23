@@ -1,5 +1,5 @@
 if status --is-login
-	set PATH /usr/local/bin /bin /usr/sbin /sbin /usr/bin /usr/X11R6/bin /usr/local/cuda/bin
+	set PATH /usr/local/bin /bin /usr/sbin /sbin /usr/bin /usr/X11R6/bin /usr/local/cuda/bin /usr/local/texlive/2012basic/bin/universal-darwin
 	set -xU EDITOR 'subl -w'
 end
 
