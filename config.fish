@@ -1,6 +1,11 @@
 if status --is-login
-	set PATH ~/.rbenv/shims /usr/local/bin /bin /usr/sbin /sbin /usr/bin /usr/local/cuda/bin
+	set PATH /usr/local/bin /bin /usr/sbin /sbin /usr/bin /usr/local/cuda/bin
 	set -xU EDITOR 'subl -w'
+	
+	#setup rbenv
+	set -x PATH $HOME/.rbenv/shims $PATH
+	set -x PATH $HOME/.rbenv/bin $PATH
+	rbenv rehash >/dev/null ^&1
 end
 
 function parse_git_branch
@@ -21,4 +26,19 @@ function fish_prompt -d "Write out the prompt"
 		printf ' %s%s/%s' (set_color normal) (set_color blue) (parse_git_branch)
 	end
 	printf '%s> ' (set_color normal)
+end
+
+function rbenv_shell
+  set -l vers $argv[1]
+
+  switch "$vers"
+    case '--complete'
+      echo '--unset'
+      echo 'system'
+      exec rbenv-versions --bare
+      return
+    case '--unset'
+      set -e RBENV_VERSION
+      return 1
+  end
 end
