@@ -3,3 +3,9 @@ function cmake-gui-gcc
 	set -lx CXX /usr/local/bin/g++-4.7
 	cmake-gui $argv
 end
+
+function cmake-gui-gcc-4.7
+  set -lx CC /usr/local/bin/gcc-4.7
+  set -lx CXX /usr/local/bin/g++-4.7
+  cmake-gui $argv
+end
