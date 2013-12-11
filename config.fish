@@ -5,6 +5,13 @@ if status --is-login
 	set -xU CXX 'clang++'	
 end
 
+#setup keychain
+set -gx HOSTNAME (hostname)
+if status --is-interactive;
+    keychain --nogui --clear ~/.ssh/id_rsa
+    [ -e $HOME/.keychain/$HOSTNAME-fish ]; and . $HOME/.keychain/$HOSTNAME-fish
+end
+
 function parse_git_branch
 	sh -c 'git branch --no-color 2> /dev/null' | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'
 end
