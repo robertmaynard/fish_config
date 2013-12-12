@@ -8,7 +8,7 @@ end
 #setup keychain
 set -gx HOSTNAME (hostname)
 if status --is-interactive;
-    keychain --nogui --clear ~/.ssh/id_rsa
+    keychain --nogui ~/.ssh/id_rsa
     [ -e $HOME/.keychain/$HOSTNAME-fish ]; and . $HOME/.keychain/$HOSTNAME-fish
 end
 
