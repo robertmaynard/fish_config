@@ -1,3 +1,6 @@
 function dos2unix
-	cat $argv | tr -d '\r'
+  for file in $argv
+	  cat $file | tr -d '\r' > $file.bak
+    mv $file.bak $file
+  end
 end
