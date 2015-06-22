@@ -1,11 +1,6 @@
 if status --is-login
 	set PATH /usr/local/bin /bin /usr/sbin /sbin /usr/bin /usr/local/cuda/bin
 	set -xU EDITOR 'subl -w'
-	
-	#setup rbenv
-	set -x PATH $HOME/.rbenv/shims $PATH
-	set -x PATH $HOME/.rbenv/bin $PATH
-	rbenv rehash >/dev/null ^&1
 end
 
 function parse_git_branch
