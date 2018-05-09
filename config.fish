@@ -5,6 +5,18 @@ if status --is-login
   set PATH /usr/local/bin /bin /usr/sbin /sbin /usr/bin /usr/local/cuda/bin
 end
 
+#setup keychain
+if status --is-interactive
+    keychain --quiet --agents ssh --eval id_rsa
+end
+
+begin
+    set -l HOSTNAME (hostname)
+    if test -f ~/.keychain/$HOSTNAME-fish
+        source ~/.keychain/$HOSTNAME-fish
+    end
+end
+
 function parse_git_branch
   sh -c 'git branch --no-color 2> /dev/null' | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'
 end
@@ -23,3 +35,4 @@ function fish_prompt -d "Write out the prompt"
   end
   printf '%s> ' (set_color normal)
 end
+
