@@ -1,7 +1,5 @@
 
-if status --is-login
-  set PATH /usr/local/bin /bin /usr/sbin /sbin /usr/bin
-end
+set -U fish_user_paths /usr/local/cuda/bin
 
 #setup keychain
 if status --is-interactive
