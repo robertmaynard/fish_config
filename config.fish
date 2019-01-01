@@ -1,5 +1,6 @@
 
-set -U fish_user_paths /usr/local/cuda/bin
+set -x fish_user_paths /usr/local/cuda/bin
+set -x LD_LIBRARY_PATH "/usr/local/cuda/lib64"
 
 #setup keychain
 if status --is-interactive
