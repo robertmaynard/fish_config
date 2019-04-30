@@ -1,5 +1,5 @@
 
-set -x fish_user_paths /usr/local/cuda/bin
+set -x fish_user_paths /usr/local/cuda/bin /home/robert/.local/bin/
 set -x LD_LIBRARY_PATH "/usr/local/cuda/lib64"
 
 #setup keychain
