@@ -15,3 +15,7 @@ begin
     end
 end
 
+
+# added by pipx (https://github.com/pipxproject/pipx)
+set -x PATH /home/robert/.local/bin $PATH
+
