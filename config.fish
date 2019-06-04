@@ -1,6 +1,7 @@
 
 set -x fish_user_paths /usr/local/cuda/bin /home/robert/.local/bin/
 set -x LD_LIBRARY_PATH "/usr/local/cuda/lib64"
+set -x CMAKE_GENERATOR Ninja
 
 #setup keychain
 if status --is-interactive
