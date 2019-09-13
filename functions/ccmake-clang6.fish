@@ -1,5 +1,5 @@
 function ccmake-clang6
   set -lx CC /usr/bin/clang-6.0
   set -lx CXX /usr/bin/clang++-6.0
-  ccmake $argv
+  ccmake -DCMAKE_CXX_COMPILER_LAUNCHER=ccache $argv
 end
