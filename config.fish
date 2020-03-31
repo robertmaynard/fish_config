@@ -23,3 +23,6 @@ end
 # added by pipx (https://github.com/pipxproject/pipx)
 set -x PATH /home/robert/.local/bin $PATH
 
+# for rust
+set -x PATH /home/robert/.cargo/bin $PATH
+
