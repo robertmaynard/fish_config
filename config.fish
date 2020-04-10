@@ -8,6 +8,7 @@ set -x SCCACHE_CACHE_SIZE "32G"
 #useful only for CMake 3.17+
 set -x CMAKE_C_COMPILER_LAUNCHER sccache
 set -x CMAKE_CXX_COMPILER_LAUNCHER sccache
+set -x CMAKE_CUDA_COMPILER_LAUNCHER sccache
 
 #setup keychain
 if status --is-interactive
