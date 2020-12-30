@@ -28,4 +28,4 @@ set -x PATH /home/robert/.local/bin $PATH
 
 # for rust
 set -x PATH /home/robert/.cargo/bin $PATH
-
+set -x CCMAKE_COLORS "s=213:p=227:c=207:n=203:y=49"
