@@ -9,9 +9,10 @@ h2. Git features
 * Provides completion of branch names for git branch
 
 h2.  Installation
-
+```
   cd ~/.config/fish
-  git init 
+  git init
   git add .
   git remote add github git://github.com/robertmaynard/fish_config.git
   git pull github master
+```
