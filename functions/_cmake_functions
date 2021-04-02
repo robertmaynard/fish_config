@@ -1,0 +1,47 @@
+function cmake-gui-clang8
+  set -lx CC /usr/bin/clang-8
+  set -lx CXX /usr/bin/clang++-8
+  cmake-gui $argv
+end
+
+function cmake-gui-clang9
+  set -lx CC /usr/bin/clang-9
+  set -lx CXX /usr/bin/clang++-9
+  cmake-gui $argv
+end
+
+function cmake-gui-clang10
+  set -lx CC /usr/bin/clang-10
+  set -lx CXX /usr/bin/clang++-10
+  cmake-gui $argv
+end
+
+function cmake-gui-clang11
+  set -lx CC /usr/bin/clang-11
+  set -lx CXX /usr/bin/clang++-11
+  cmake-gui $argv
+end
+
+function cmake-gui-gcc7
+  set -lx CC /usr/bin/gcc-7
+  set -lx CXX /usr/bin/g++-7
+  cmake-gui $argv
+end
+
+function cmake-gui-gcc8
+  set -lx CC /usr/bin/gcc-8
+  set -lx CXX /usr/bin/g++-8
+  cmake-gui $argv
+end
+
+function cmake-gui-gcc9
+  set -lx CC /usr/bin/gcc-9
+  set -lx CXX /usr/bin/g++-9
+  cmake-gui $argv
+end
+
+function cmake-gui-gcc10
+  set -lx CC /usr/bin/gcc-10
+  set -lx CXX /usr/bin/g++-10
+  cmake-gui $argv
+end

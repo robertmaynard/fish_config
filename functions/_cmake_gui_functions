@@ -1,0 +1,47 @@
+function cmake-clang8
+  set -lx CC /usr/bin/clang-8
+  set -lx CXX /usr/bin/clang++-8
+  cmake $argv
+end
+
+function cmake-clang9
+  set -lx CC /usr/bin/clang-9
+  set -lx CXX /usr/bin/clang++-9
+  cmake $argv
+end
+
+function cmake-clang10
+  set -lx CC /usr/bin/clang-10
+  set -lx CXX /usr/bin/clang++-10
+  cmake $argv
+end
+
+function cmake-clang11
+  set -lx CC /usr/bin/clang-11
+  set -lx CXX /usr/bin/clang++-11
+  cmake $argv
+end
+
+function cmake-gcc7
+  set -lx CC /usr/bin/gcc-7
+  set -lx CXX /usr/bin/g++-7
+  cmake $argv
+end
+
+function cmake-gcc8
+  set -lx CC /usr/bin/gcc-8
+  set -lx CXX /usr/bin/g++-8
+  cmake $argv
+end
+
+function cmake-gcc9
+  set -lx CC /usr/bin/gcc-9
+  set -lx CXX /usr/bin/g++-9
+  cmake $argv
+end
+
+function cmake-gcc10
+  set -lx CC /usr/bin/gcc-10
+  set -lx CXX /usr/bin/g++-10
+  cmake $argv
+end
