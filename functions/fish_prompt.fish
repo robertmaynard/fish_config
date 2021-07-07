@@ -1,45 +1,49 @@
+set __fish_git_prompt_show_informative_status
+set __fish_git_prompt_showcolorhints
+set __fish_git_prompt_showupstream "informative"
+
+# Colors
+set green (set_color green)
+set blue (set_color blue)
+set magenta (set_color magenta)
+set normal (set_color normal)
+set red (set_color red)
+set yellow (set_color yellow)
+
+set __fish_git_prompt_color_branch brmagenta --bold
+set __fish_git_prompt_color_dirtystate white
+set __fish_git_prompt_color_invalidstate red
+set __fish_git_prompt_color_merging yellow
+set __fish_git_prompt_color_stagedstate yellow
+set __fish_git_prompt_color_upstream_ahead green
+set __fish_git_prompt_color_upstream_behind red
+set __fish_git_prompt_color brblue
+
+
+# Icons
+set __fish_git_prompt_char_cleanstate '👍 '
+set __fish_git_prompt_char_conflictedstate '💩 '
+set __fish_git_prompt_char_dirtystate '⚠️  '
+set __fish_git_prompt_char_invalidstate '🤮 '
+set __fish_git_prompt_char_stagedstate '🚥 '
+set __fish_git_prompt_char_stashstate '📦 '
+set __fish_git_prompt_char_stateseparator ' | '
+set __fish_git_prompt_char_untrackedfiles '🔍 '
+set __fish_git_prompt_char_upstream_ahead '☝️ '
+set __fish_git_prompt_char_upstream_behind '👇 '
+set __fish_git_prompt_char_upstream_diverged '🚧 '
+set __fish_git_prompt_char_upstream_equal '💯 '
+
+
 function fish_prompt
+  set last_status $status
 
-  if not set -q -g __fish_prompt_helper_funcs_defined
-    set -g __fish_prompt_helper_funcs_defined
-    function _git_branch_name
-      echo (git rev-parse --abbrev-ref HEAD ^/dev/null)
-    end
+  set_color $fish_color_cwd
+  printf '%s' (prompt_pwd)
 
-    function _git_tag_name
-      echo (git describe --tags --exact-match ^/dev/null)
-    end
+  set_color normal
+  printf '%s ' (__fish_git_prompt)
 
-    function _is_git_dirty
-      echo (git status -s --ignore-submodules=dirty ^/dev/null)
-    end
-  end
-
-  set -l yellow (set_color -o yellow)
-  set -l red (set_color -o red)
-  set -l blue (set_color -o blue)
-  set -l green (set_color -o green)
-  set -l normal (set_color normal)
-
-  set -l cwd $green(prompt_pwd)
-
-  if [ (_git_branch_name) ]
-    set -l git_branch $yellow(_git_branch_name)
-
-    if [ (_is_git_dirty) ]
-      set git_branch $red(_git_branch_name)
-    end
-
-    set git_info "$blue $git_branch$blue"
-  else if [ (_git_tag_name) ]
-    set -l git_tag $yellow(_git_tag_name)
-
-    if [ (_is_git_dirty) ]
-      set git_tag $red(_git_tag_name)
-    end
-
-    set git_info "$blue tag: $git_tag$blue"
-  end
-
-  echo -n -s $cwd $git_info ' $ ' $normal
+  set_color brblue
+  echo -n ' $ '
 end
